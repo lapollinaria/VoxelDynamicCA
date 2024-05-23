@@ -1,2 +1,2 @@
 # VoxelDynamicCA
- Dymanic landscapes mehod made using CA approach
+ Dynamic landscapes method made using CA approach
