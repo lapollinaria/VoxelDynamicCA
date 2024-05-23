@@ -10,7 +10,6 @@
 // Sets default values
 AChunkBase::AChunkBase()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 
 	Mesh = CreateDefaultSubobject<UProceduralMeshComponent>("Mesh");
@@ -87,6 +86,19 @@ void AChunkBase::ModifyVoxel(const FIntVector Position, const EBlock Block)
 
 	ClearMesh();
 	
+	GenerateMesh();
+
+	ApplyMesh();
+}
+
+		
+void AChunkBase::ModifyMap()
+{
+	
+	Edit2DHeightMap();
+
+	ClearMesh();
+
 	GenerateMesh();
 
 	ApplyMesh();
