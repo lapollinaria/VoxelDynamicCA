@@ -4,13 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
-#include "UE5VoxelTutorialGameModeBase.generated.h"
+#include "VoxelCAforUEGameModeBase.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class UE5VOXELTUTORIAL_API AUE5VoxelTutorialGameModeBase : public AGameModeBase
+class VOXELCAFORUE_API AVoxelCAforUEGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
