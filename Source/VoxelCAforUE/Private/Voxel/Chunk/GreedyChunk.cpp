@@ -56,6 +56,279 @@ void AGreedyChunk::Generate3DHeightMap(const FVector Position)
 	}
 }
 
+
+
+//Dynamic modifications
+void AGreedyChunk::Edit2DHeightMap()
+{
+	int seed = time(0);
+	srand(seed);
+//	int r;
+
+		//for (int z = (Size - 1); z > 15; z--)
+		//{
+		//	for (int x = 8; x < 22; x++)
+		//	{
+		//		for (int y = 0; y < Size; y++)
+		//		{
+
+		//			if ((Blocks[GetBlockIndex(x, y, z)] == EBlock::Stone) && (Blocks[GetBlockIndex(x, y, z + 1)] == EBlock::Air))
+		//			{
+
+		//				r = rand() % 10;
+
+		//				if (r < 2) {
+		//					Blocks[GetBlockIndex(x, y, z)] = EBlock::Air;
+		//				}
+		//			}
+
+		//		}
+		//	}
+		//}
+
+		//for (int z = (Size = 15); z > 10; z--)
+		//{
+		//	for (int x = 8; x < 22; x++)
+		//	{
+		//		for (int y = 0; y < Size; y++)
+		//		{
+
+		//			if ((Blocks[GetBlockIndex(x, y, z)] == EBlock::Stone) && (Blocks[GetBlockIndex(x, y, z + 1)] == EBlock::Air))
+		//			{
+
+		//				r = rand() % 10;
+
+		//				if (r < 3) {
+		//					Blocks[GetBlockIndex(x, y, z)] = EBlock::Air;
+		//				}
+		//			}
+
+		//		}
+		//	}
+		//}
+
+	for (int z = Size - 1; z > 1; z--)
+	{
+		for (int x = 10; x < 20; x++)
+		{
+			for (int y = 0; y < Size; y++)
+			{
+				//generating mountains with 0,2 chance
+				//if ((Blocks[GetBlockIndex(x, y, z)] == EBlock::Air) && (Blocks[GetBlockIndex(x, y, z - 1)] == EBlock::Stone))
+				//{
+
+				//	int r = rand() % 10;
+
+				//	if (r < 2) {
+				//		Blocks[GetBlockIndex(x, y, z)] = EBlock::Stone;
+				//	}
+				//}
+
+				//if ((Blocks[GetBlockIndex(x, y, z)] == EBlock::Stone) && (Blocks[GetBlockIndex(x, y, z + 1)] == EBlock::Air))
+				//{
+
+				//	int counter = 0;
+
+				//	if (Blocks[GetBlockIndex(x + 1, y, z)] == EBlock::Stone)
+				//	{
+				//		counter++;
+				//	}
+				//	if (Blocks[GetBlockIndex(x - 1, y, z)] == EBlock::Stone)
+				//	{
+				//		counter++;
+				//	}
+				//	if (Blocks[GetBlockIndex(x, y + 1, z)] == EBlock::Stone)
+				//	{
+				//		counter++;
+				//	}
+				//	if (Blocks[GetBlockIndex(x, y - 1, z)] == EBlock::Stone)
+				//	{
+				//		counter++;
+				//	}
+				//	if (Blocks[GetBlockIndex(x + 1, y + 1, z)] == EBlock::Stone)
+				//	{
+				//		counter++;
+				//	}
+				//	if (Blocks[GetBlockIndex(x + 1, y - 1, z)] == EBlock::Stone)
+				//	{
+				//		counter++;
+				//	}
+				//	if (Blocks[GetBlockIndex(x - 1, y + 1, z)] == EBlock::Stone)
+				//	{
+				//		counter++;
+				//	}
+				//	if (Blocks[GetBlockIndex(x - 1, y - 1, z)] == EBlock::Stone)
+				//	{
+				//		counter++;
+				//	}
+
+				//	if ((counter >= 5) && (counter < 7))
+				//	{
+
+				//		r = rand() % 10;
+
+				//        if (r < 8) {
+				//	        Blocks[GetBlockIndex(x, y, z)] = EBlock::Air;
+				//        }
+
+				//		//Blocks[GetBlockIndex(x, y, z)] = EBlock::Air;
+
+				//	}
+				//	else if ((counter >= 2) && (counter < 5)) {
+
+				//		r = rand() % 10;
+
+				//		if (r < 6) {
+				//			Blocks[GetBlockIndex(x, y, z)] = EBlock::Air;
+				//		}
+				//	}
+				//	else if ((counter >= 0) && (counter < 2)) {
+
+				//		r = rand() % 10;
+
+				//		if (r < 4) {
+				//			Blocks[GetBlockIndex(x, y, z)] = EBlock::Air;
+				//		}
+				//	}
+				//}
+
+
+				
+				if ((Blocks[GetBlockIndex(x, y, z)] == EBlock::Air) && (Blocks[GetBlockIndex(x, y, z - 1)] == EBlock::Stone))
+				{
+						int counter = 0;
+
+						if (Blocks[GetBlockIndex(x + 1, y, z)] == EBlock::Stone)
+						{
+							counter++;
+						}
+						if (Blocks[GetBlockIndex(x - 1, y, z)] == EBlock::Stone)
+						{
+							counter++;
+						}
+						if (Blocks[GetBlockIndex(x, y + 1, z)] == EBlock::Stone)
+						{
+							counter++;
+						}
+						if (Blocks[GetBlockIndex(x, y - 1, z)] == EBlock::Stone)
+						{
+							counter++;
+						}
+						if (Blocks[GetBlockIndex(x + 1, y + 1, z)] == EBlock::Stone)
+						{
+							counter++;
+						}
+						if (Blocks[GetBlockIndex(x + 1, y - 1, z)] == EBlock::Stone)
+						{
+							counter++;
+						}
+						if (Blocks[GetBlockIndex(x - 1, y + 1, z)] == EBlock::Stone)
+						{
+							counter++;
+						}
+						if (Blocks[GetBlockIndex(x - 1, y - 1, z)] == EBlock::Stone)
+						{
+							counter++;
+						}
+
+						if (counter > 0)
+						{
+							Blocks[GetBlockIndex(x, y, z)] = EBlock::Stone;
+
+						}
+				}
+
+
+			}
+		}
+	}
+
+	//for (int z = 10; z > 7; z--)
+	//{
+	//	for (int x = 12; x < 18; x++)
+	//	{
+	//		for (int y = 0; y < Size; y++)
+	//		{
+
+	//			if ((Blocks[GetBlockIndex(x, y, z)] == EBlock::Stone) && (Blocks[GetBlockIndex(x, y, z + 1)] == EBlock::Air))
+	//			{
+
+	//				r = rand() % 10;
+
+	//				if (r < 6) {
+	//					Blocks[GetBlockIndex(x, y, z)] = EBlock::Air;
+	//				}
+	//			}
+
+	//		}
+	//	}
+	//}
+
+	//for (int z = 7; z > 5; z--)
+	//{
+	//	for (int x = 12; x < 18; x++)
+	//	{
+	//		for (int y = 0; y < Size; y++)
+	//		{
+
+	//			if ((Blocks[GetBlockIndex(x, y, z)] == EBlock::Stone) && (Blocks[GetBlockIndex(x, y, z + 1)] == EBlock::Air))
+	//			{
+
+	//				r = rand() % 10;
+
+	//				if (r < 4) {
+	//					Blocks[GetBlockIndex(x, y, z)] = EBlock::Air;
+	//				}
+	//			}
+
+	//		}
+	//	}
+	//}
+
+	//for (int z = 5; z > 1; z--)
+	//{
+	//	for (int x = 12; x < 18; x++)
+	//	{
+	//		for (int y = 0; y < Size; y++)
+	//		{
+
+	//			if ((Blocks[GetBlockIndex(x, y, z)] == EBlock::Stone) && (Blocks[GetBlockIndex(x, y, z + 1)] == EBlock::Air))
+	//			{
+
+	//				r = rand() % 10;
+
+	//				if (r < 3) {
+	//					Blocks[GetBlockIndex(x, y, z)] = EBlock::Air;
+	//				}
+	//			}
+
+	//		}
+	//	}
+	//}
+
+	//for (int z = 5; z > 2; z--)
+	//{
+	//	for (int x = 14; x < 16; x++)
+	//	{
+	//		for (int y = 0; y < Size; y++)
+	//		{
+
+	//			if ((Blocks[GetBlockIndex(x, y, z)] == EBlock::Stone) && (Blocks[GetBlockIndex(x, y, z + 1)] == EBlock::Air))
+	//			{
+
+	//				r = rand() % 10;
+
+	//				if (r < 2) {
+	//					Blocks[GetBlockIndex(x, y, z)] = EBlock::Air;
+	//				}
+	//			}
+
+	//		}
+	//	}
+	//}
+}
+
+
 void AGreedyChunk::GenerateMesh()
 {
 	// Sweep over each axis (X, Y, Z)
