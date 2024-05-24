@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
-#include "VoxelCAforUEGameModeBase.generated.h"
+#include "VoxelCAGameModeBase.generated.h"
 
 /**
  * 
