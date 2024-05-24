@@ -3,9 +3,9 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class VoxelCAforUE : TargetRules
+public class VoxelCAforUEEditorTarget : TargetRules
 {
-	public VoxelCAforUE ( TargetInfo Target) : base(Target)
+	public VoxelCAforUEEditorTarget ( TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
