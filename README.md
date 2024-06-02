@@ -25,7 +25,7 @@
 В Epic Games launcher выбрать вкладку Unreal Engine -> Library -> Engine Versions и установить версию 5.2
 
 2. Для запуска проекта понадобится Visual Studio, инструкции можно найти по ссылке https://learn.microsoft.com/ru-ru/visualstudio/install/install-visual-studio?view=vs-2022
-3. Сохранить проект (лучше архивом) и открыть решение (файл .sln)
+3. Сохранить проект (лучше архивом) и открыть решение (файл .sln). В GitHub все нужные файлы не влезают, вот ссылка на архив: https://drive.google.com/file/d/1QQkUFsk2UJwn73bEbbg7gGu-CNexAqN-/view?usp=drive_link
 4. Запустить решение по кнопке Start without debugging (Ctrl + F5)
 5. Должен открыться уровень Map, если нет, его надо открыть вручную (file -> open level -> в папке content уровень Map)
 6. На данный момент пользоватльское переключение не реализовано, поэтому настройки должны быть Chunk type: Naive Chunk, Generation type: 2D генерация (Это дефолтные настройки, они уже установлены)
